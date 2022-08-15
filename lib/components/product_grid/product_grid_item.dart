@@ -27,7 +27,7 @@ class ProdutctGridItem extends StatelessWidget {
 
     // ClipRRect corta de forma arredondada um determinado elemento
     return ClipRRect(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(3),
       child: GridTile(
         // gesture detector será o responsável por captar o toque
         // ignore: sort_child_properties_last
@@ -55,7 +55,7 @@ class ProdutctGridItem extends StatelessWidget {
             // incluído no código
             builder: (ctx, product, _) => IconButton(
               icon: Icon(product.isFavorite ? Icons.favorite : Icons.favorite_border),
-              color: Theme.of(context).colorScheme.secondary,
+              color: Colors.white,
               onPressed: () async {
                 try {
                   await Provider.of<ProductController>(
@@ -80,6 +80,7 @@ class ProdutctGridItem extends StatelessWidget {
           // botão comprar
           trailing: IconButton(
             icon: const Icon(Icons.shopping_bag),
+            color: Colors.white,
             onPressed: () {
               // retorna o scaffold mais próximo deste local.
               // neste caso ProductOverviewScreen.
@@ -101,7 +102,6 @@ class ProdutctGridItem extends StatelessWidget {
 
               cart.addProduct(product, 1);
             },
-            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
       ),
